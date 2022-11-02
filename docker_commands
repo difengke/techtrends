@@ -1,0 +1,43 @@
+## Docker commands used to build the application 
+# Run this command from "project" directory where the Dockerfile is located.
+docker build -t techtrends .
+
+## Docker commands used to run the application
+docker run --name techtrends -d -p 7111:3111 techtrends
+
+## Docker commands used to get the application logs
+docker logs techtrends
+
+## Logs from the container running the TechTrends application
+$ docker logs techtrends
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+2022-11-01 18:55:17 WARNING   * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2022-11-01 18:55:17 INFO      * Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+2022-11-01 18:57:53 INFO     172.17.0.1 - - [01/Nov/2022 18:57:53] "GET / HTTP/1.1" 200 -
+2022-11-01 18:57:53 INFO     172.17.0.1 - - [01/Nov/2022 18:57:53] "GET /static/css/main.css HTTP/1.1" 200 -
+2022-11-01 18:58:01 INFO     172.17.0.1 - - [01/Nov/2022 18:58:01] "GET /healthz HTTP/1.1" 200 -
+2022-11-01 18:58:08 INFO     172.17.0.1 - - [01/Nov/2022 18:58:08] "GET /metrics HTTP/1.1" 200 -
+2022-11-01 18:58:17 INFO     The requested article does not exist.
+2022-11-01 18:58:17 INFO     172.17.0.1 - - [01/Nov/2022 18:58:17] "GET /7 HTTP/1.1" 404 -
+2022-11-01 18:58:17 INFO     172.17.0.1 - - [01/Nov/2022 18:58:17] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-11-01 18:58:21 INFO     An article is retrieved with title : CNCF Cloud Native Definition v1.0
+2022-11-01 18:58:21 INFO     172.17.0.1 - - [01/Nov/2022 18:58:21] "GET /5 HTTP/1.1" 200 -
+2022-11-01 18:58:21 INFO     172.17.0.1 - - [01/Nov/2022 18:58:21] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-11-01 18:58:26 INFO     172.17.0.1 - - [01/Nov/2022 18:58:26] "GET /create HTTP/1.1" 200 -
+2022-11-01 18:58:26 INFO     172.17.0.1 - - [01/Nov/2022 18:58:26] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-11-01 18:58:39 INFO     Article "new post 7" created.
+2022-11-01 18:58:39 INFO     172.17.0.1 - - [01/Nov/2022 18:58:39] "POST /create HTTP/1.1" 302 -
+2022-11-01 18:58:39 INFO     172.17.0.1 - - [01/Nov/2022 18:58:39] "GET / HTTP/1.1" 200 -
+2022-11-01 18:58:39 INFO     172.17.0.1 - - [01/Nov/2022 18:58:39] "GET /static/css/main.css HTTP/1.1" 304 -
+2022-11-01 18:59:07 INFO     About Us page accessed.
+2022-11-01 18:59:07 INFO     172.17.0.1 - - [01/Nov/2022 18:59:07] "GET /about HTTP/1.1" 200 -
+2022-11-01 18:59:08 INFO     172.17.0.1 - - [01/Nov/2022 18:59:08] "GET /static/css/main.css HTTP/1.1" 304 -
+
+difengk@N-20N3PF227Z4Y MINGW64 ~/Desktop/udacity/github/project (main)
+
+
