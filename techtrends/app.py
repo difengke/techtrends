@@ -6,6 +6,9 @@ from werkzeug.exceptions import abort
 
 # Count all database connections
 connection_count = 0
+stdout_handler = sys.stdout
+stderr_handler = sys.stderr
+handlers = [stderr_handler, stdout_handler]
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
@@ -95,9 +98,6 @@ def metrics():
 
 # start the application on port 3111
 if __name__ == "__main__":
-#   logging.basicConfig(level=logging.DEBUG)
-   logging.basicConfig(
-       format='%(asctime)s %(levelname)-8s %(message)s',
-       level=logging.DEBUG,
-       datefmt='%Y-%m-%d %H:%M:%S')
+#   logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s', level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
+   logging.basicConfig(format='%(asctime)s %(name)s %(levelname)-8s %(message)s', level=logging.DEBUG, handlers=handlers)
    app.run(host='0.0.0.0', port='3111')
